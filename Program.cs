@@ -14,11 +14,16 @@ namespace LinqTestLessons
             arrayList.Add("Adam");
             arrayList.Add("Jon");
             arrayList.Add("Tom");
-            var names = arrayList.Cast<string>().Where(n => n.Length < 4);
-            foreach (var result in names)
+            var name = arrayList.OfType<string>().Where(t => t.Length > 3); // Спримением OfType
+            foreach (var result in name)
             {
                 Console.WriteLine(result);
             }
+            //var names = arrayList.Cast<string>().Where(n => n.Length < 4);
+            //foreach (var result in names)
+            //{
+            //    Console.WriteLine(result);
+            //}
             //using (appContext db = new appContext())
             //{
             //    Employee employee1 = new Employee { firstName = "Tom", LasName = "Jemson" };
