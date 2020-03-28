@@ -9,16 +9,17 @@ namespace LinqTestLessons
     {
         static void Main(string[] args)
         {
+            TestShowLinq();
             // вызов LINQ с применение унаследованных коллекций 
-            var arrayList = new ArrayList();
-            arrayList.Add("Adam");
-            arrayList.Add("Jon");
-            arrayList.Add("Tom");
-            var name = arrayList.OfType<string>().Where(t => t.Length > 3); // Спримением OfType
-            foreach (var result in name)
-            {
-                Console.WriteLine(result);
-            }
+            //var arrayList = new ArrayList();
+            //arrayList.Add("Adam");
+            //arrayList.Add("Jon");
+            //arrayList.Add("Tom");
+            //var name = arrayList.OfType<string>().Where(t => t.Length > 3); // Спримением OfType
+            //foreach (var result in name)
+            //{
+            //    Console.WriteLine(result);
+            //}
             //var names = arrayList.Cast<string>().Where(n => n.Length < 4);
             //foreach (var result in names)
             //{
@@ -51,6 +52,17 @@ namespace LinqTestLessons
             //}
 
             Console.ReadLine();
+        }
+
+        public static void TestShowLinq()
+        {
+            string[] name = new[] {"one", "two",  "three"};
+            Console.WriteLine("Before where() is called.");
+            IEnumerable<string> Iestring = name.Where(t => t.Length == 3);
+            foreach (var result in Iestring)
+            {
+                Console.WriteLine("proseccing: " + result);
+            }
         }
     }
 
