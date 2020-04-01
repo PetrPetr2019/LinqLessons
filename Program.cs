@@ -69,48 +69,51 @@ namespace LinqTestLessons
            // }
            public static void ShowCollection()
            {
-
-            // Создаем массив целых чисел
-            int[]arrayMas = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-            IEnumerable<int> mas = arrayMas.Select(t => t);
-            // Отобразить результпт
-            foreach (var result in mas)
-            {
-                Console.WriteLine(result);
-            }
-            // Перевернуть массив
-            Array.Reverse(arrayMas);
-            Console.WriteLine(new string('.', 10));
-            foreach (var rez in mas)
-            {
-                Console.WriteLine(rez);
-            }
+               int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+               IEnumerable<int> mas = array.Where(t => t % 2== 1).Reverse().ToList();
+               foreach (var result in mas)
+               {
+                   Console.WriteLine(result); 
+               }
 
 
 
 
+               ////////////////////////////////////////////////////
+               //// Создаем массив целых чисел
+               //int[]arrayMas = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+               //IEnumerable<int> mas = arrayMas.Select(t => t);
+               //// Отобразить результпт
+               //foreach (var result in mas)
+               //{
+               //    Console.WriteLine(result);
+               //}
+               //// Перевернуть массив
+               //Array.Reverse(arrayMas);
+               //Console.WriteLine(new string('.', 10));
+               //foreach (var rez in mas)
+               //{
+               //    Console.WriteLine(rez);
+               //}
 
+               //////////////////////////////////////////////////////
+               //// Массив чисел
+               //int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+               //IEnumerable<int> mas = array.Select(p => p);
+               //// Отображаем елементы
+               //foreach (var rezult in mas)
+               //{
+               //    Console.WriteLine(rezult);
+               //}
 
-
-
-            //////////////////////////////////////////////////////
-            //// Массив чисел
-            //int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-            //IEnumerable<int> mas = array.Select(p => p);
-            //// Отображаем елементы
-            //foreach (var rezult in mas)
-            //{
-            //    Console.WriteLine(rezult);
-            //}
-
-            //Array.Reverse(array); // Переворачиваем массив
-            //Console.WriteLine(new string('.', 10));
-            //    // Снова отображаем результат
-            //foreach (var rez in mas)
-            //{
-            //    Console.WriteLine(rez);
-            //}
-            ////////////////////////////////////////////////////////
+               //Array.Reverse(array); // Переворачиваем массив
+               //Console.WriteLine(new string('.', 10));
+               //    // Снова отображаем результат
+               //foreach (var rez in mas)
+               //{
+               //    Console.WriteLine(rez);
+               //}
+               ////////////////////////////////////////////////////////
            }
                /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                //string[] avtoCar = {"Volvo", "Nissan", "BMW", "Audi", "Kavasaki", "Lada", "Pobeda", "Volga", "Astra", "Aka"};
