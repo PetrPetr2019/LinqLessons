@@ -11,6 +11,7 @@ namespace LinqTestLessons
         public int id { get; set; }
         public string firstName{ get; set; }
         public string LasName { get; set; }
+        public int Age { get; set; }
 
     }
 
