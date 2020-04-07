@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LinqTestLessons.Migrations
 {
     [DbContext(typeof(appContext))]
-    [Migration("20200331105834_w")]
-    partial class w
+    [Migration("20200406114745_t2")]
+    partial class t2
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -30,6 +30,9 @@ namespace LinqTestLessons.Migrations
                     b.Property<int>("Age")
                         .HasColumnType("int");
 
+                    b.Property<string>("Car")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("LasName")
                         .HasColumnType("nvarchar(max)");
 
@@ -38,7 +41,25 @@ namespace LinqTestLessons.Migrations
 
                     b.HasKey("id");
 
-                    b.ToTable("employees");
+                    b.ToTable("Employees");
+                });
+
+            modelBuilder.Entity("LinqTestLessons.Price", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("Cost")
+                        .HasColumnType("int");
+
+                    b.Property<int>("DataType")
+                        .HasColumnType("int");
+
+                    b.HasKey("id");
+
+                    b.ToTable("UsePrices");
                 });
 #pragma warning restore 612, 618
         }
